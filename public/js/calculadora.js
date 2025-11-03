@@ -20,21 +20,23 @@ let cantidadDePersonas = null;
 
 const picaderas = {
   primium: {
-    precio: 185,
-    Producto: "En caja : kraft + pastelito, croqueta, quipe, pinchito de pollo",
+    precio: 165,
+    Producto: "En caja : kraft + , Aderezo, pastelito (queso o pollo), croqueta, mini hotdog, quipe.",
   },
   gourmet: {
     precio: 130,
-    Producto: "En caja : kraft + pastelito, croqueta, quipe, pinchito de pollo",
+    Producto: "En caja : transparente + pastelitos (queso o pollo), croqueta, quipe, mini brownie.",
   },
   regular: {
     precio: 100,
-    Producto: "En caja : kraft + pastelito, croqueta, quipe, pinchito de pollo",
+    Producto: "En caja : transparente + pastelito (queso o pollo), quipe, mini pizitas.",
   },
 
 
 
 };
+
+
 //calculo de picaderas
 function calcularpicaderas() {
   let detallesDelCombo;
@@ -95,7 +97,7 @@ inputsCombos.forEach((inputCombo) => {
       precioDecombo = picaderas.primium.precio;
     }
     if (comboSeleccionado == "gourmet") {
-      precioDecombo = picaderas.regular.precio;
+      precioDecombo = picaderas.gourmet.precio;
     }
     if (comboSeleccionado == "regular") {
       precioDecombo = picaderas.regular.precio;
