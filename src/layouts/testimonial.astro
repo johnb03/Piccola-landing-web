@@ -1,0 +1,21 @@
+---
+import ButtonCta from "../components/Button.astro";
+import TestimonialCard from "../components/testimonialCard.astro";;
+---
+
+
+
+<div class="w-full flex flex-col gap-8">
+    <div id="testimonial-head  " class=" w-full flex flex-col  items-center   gap-6">
+        <h2 class="font-bold text-primary-Darker text-4xl max-w-[40rem] text-center  ">Clientes Satisfechos con Nuestras Picaderas en <br/>  <span class="leading-14 text-Secondary-Normal-active">Santo Domingo</span> </h2>
+        <ButtonCta href="https://wa.link/ig1nh5" title={"Cotiza con nosotros"}/>
+    </div>
+    <div id="#testimonal-wrap" class=" flex justify-center relative overflow-scroll  snap-mandatory  overflow-y-hidden lg:overflow-y-hidden h-[26rem]">
+        <div class="flex  gap-10 absolute  translate-1.5 snap-center" >
+            <TestimonialCard  title={"¡Mano, estas picaderas salvaron mi cumpleaños! Llegaron a tiempo y calientitas aquí en Bella Vista. ¡Todo riquísimo!."} clienName={"-Miguel  Reyes"} date={"05/ENE/2025"} />
+            <TestimonialCard  title={"La calidad se siente, son más ricas que en cualquier otro sitio. Las croquetas y los quipes estaban de show. ¡Pidan sin miedo!"} clienName={"-Yocasta Abreu"} date={"28/FEB/2025"} />
+            <TestimonialCard  title={"Excelente servicio y buen precio para la cantidad. Me resolvieron el evento de la oficina súper rápido en Piantini"} clienName={"-Ramón Sosa "} date={"11/OCT/2025"} />
+            <TestimonialCard  title={"¡Ay, qué sabrosura! Las bolitas de queso se deshacen en la boca. Se notan que son artesanales. ¡Repetiré pronto!"} clienName={"-Doña Carmela"} date={"01/AGO/2025"} />
+        </div>
+    </div>
+</div>

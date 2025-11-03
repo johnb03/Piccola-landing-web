@@ -1,0 +1,68 @@
+---
+import type { HTMLAttributes } from "astro/types";
+
+interface Props extends HTMLAttributes<'div'> {
+  imgSrc?: string | { src: string };
+  title: string;
+  price: number;
+  und: string;
+  href: string;
+}
+
+const props = Astro.props as Props;
+const { imgSrc, title, price, und, href } = props;
+const imgUrl = typeof imgSrc === 'string' ? imgSrc : (imgSrc && 'src' in imgSrc ? imgSrc.src : '');
+---
+
+<div
+  id="card-content"
+  class="h-96 bg-transparent relative flex justify-center items-end"
+>
+  <div
+    id="card-product"
+    class="w-52 h-72 p-4 bg-primary-Darker rounded-2xl flex flex-col justify-end items-center gap-18 box-shadow-main"
+  >
+    <div
+      id="img-products"
+      class="w-40
+      h-40  bg-no-repeat bg-cover bg-center rounded-full absolute top-0 left-1/2 -translate-x-1/2 box-shadow-main"
+       style={imgUrl ? `background-image: url(${imgUrl})` : undefined} >
+   
+    </div>
+
+    <p
+      id="name-product"
+      class="text-white text-xl font-semibold text-shadow-2xs tracking-widest text-wrap"
+    >
+      {title}
+    </p>
+    <!-- footer -->
+    <div id="card-footer" class="w-48 flex justify-around items-center gap-0.5">
+      <p id="product-cant" class="text-white text-sm">{und}</p>
+
+      <a href={href} 
+        target="_blank"
+        id="price" 
+        class="  bg-Secondary-Normal hover:bg-Secondary-Normal-hover active:bg-Secondary-Normal-active active:scale-80 pt-1 pr-4 pl-4 pb-1   rounded-xl text-primary-Darker font-bold  cursor-pointer "
+      >
+        <div class="flex w-16  justify-between">
+          ${price}
+         
+          <div>
+            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" {...props}>
+                  <path fill="#0b5357" d="M4 18.5v-5.154L9.846 12L4 10.654V5.5L19.423 12z" />
+            </svg>
+          </div>
+
+        </div>
+      </a>
+    </div>
+  </div>
+</div>
+
+<style>
+  .classe {
+    /* background-image: url(${imgUrl}); */
+    /* background-image: url(/src/assets/hero-image.jpg); */
+  }
+</style>

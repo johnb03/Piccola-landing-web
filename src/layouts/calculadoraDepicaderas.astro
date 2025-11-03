@@ -1,0 +1,137 @@
+---
+const props = Astro.props;
+import ButtonCta from "../components/Button.astro";
+---
+<script src="/js/calculadora.js" defer></script>
+<div
+  id="container-calculator"
+  class="w-full  grid grid-cols-1 md:grid-cols-3 gap-6 content-center  "
+>
+
+<div class=" p-2 ">
+  <h2  class="font-bold text-md">¡Tu Presupuesto en 3 Pasos Rápidos!</h2> <br/>
+  <ul  class="flex flex-col gap-4 list-decimal p-3 font-semibold ">
+    <li>Indica la Cantidad: Coloca el número de personas o la cantidad de piezas que necesitas para tu actividad.</li>
+    <li>Elige tu Combo: Selecciona el tipo de picadera que más te guste: Estándar, Premium o Personalizado.
+
+</li>
+    <li>¡Listo! Verás el precio estimado al momento. Toca el botón de WhatsApp para confirmar tu pedido y detalles de entrega en Santo Domingo.</li>
+  </ul>
+</div>
+  <!-- columna 1 -->
+  <div id="colum1wrap" class="flex flex-col gap-4 items-center  ">
+    <!-- user cantidad -->
+     
+    <div   class="flex justify-center  box-shadow-main rounded-md">
+      <svg
+        xmlns="http://www.w3.org/2000/svg"
+        width="50"
+        height="50"
+        viewBox="0 0 24 24"
+        {...props}
+      >
+        <g fill="none" stroke="currentColor" stroke-width="1">
+          <circle cx="12" cy="6" r="4"></circle>
+          <path
+            d="M20 17.5c0 2.485 0 4.5-8 4.5s-8-2.015-8-4.5S7.582 13 12 13s8 2.015 8 4.5Z"
+            opacity="none"></path>
+        </g>
+      </svg>
+      <input id="cantidad"
+        min="10"
+        inputmode="numeric"
+        name="cantidad"
+        type="number"
+        aria-live="assertive"
+        placeholder="cantidad de personas"
+        class="  rounded-md border-solid border-2 border-Secondary-Dark-hover w-full flex justify-around items-center bg-primary-Dark text-white text-center"
+      />
+    </div>
+
+    <!-- combos selector -->
+    <!-- primiun -->
+    <div class="flex justify-center  box-shadow-main  rounded-md">
+      <svg
+        xmlns="http://www.w3.org/2000/svg"
+        width="50"
+        height="50"
+        viewBox="0 0 1024 1024"
+        {...props}
+      >
+        <path
+          fill="currentColor"
+          d="M128 352.576V352a288 288 0 0 1 491.072-204.224a192 192 0 0 1 274.24 204.48a64 64 0 0 1 57.216 74.24C921.6 600.512 850.048 710.656 736 756.992V800a96 96 0 0 1-96 96H384a96 96 0 0 1-96-96v-43.008c-114.048-46.336-185.6-156.48-214.528-330.496A64 64 0 0 1 128 352.64zm64-.576h64a160 160 0 0 1 320 0h64a224 224 0 0 0-448 0m128 0h192a96 96 0 0 0-192 0m439.424 0h68.544A128.256 128.256 0 0 0 704 192c-15.36 0-29.952 2.688-43.52 7.616c11.328 18.176 20.672 37.76 27.84 58.304A64.128 64.128 0 0 1 759.424 352M672 768H352v32a32 32 0 0 0 32 32h256a32 32 0 0 0 32-32zm-342.528-64h365.056c101.504-32.64 165.76-124.928 192.896-288H136.576c27.136 163.072 91.392 255.36 192.896 288"
+        ></path>
+      </svg>
+      <div class="input-select">
+        Primium<input class="combo" name="opcion" value="primium" type="radio" />
+      </div>
+    </div>
+    <!-- end primiun -->
+
+    <!-- goutmet -->
+    <div class="flex justify-center box-shadow-main  rounded-md ">
+    <svg xmlns="http://www.w3.org/2000/svg" width="50" height="50" viewBox="0 0 24 24" {...props}>
+	<g fill="none">
+		<path d="M16 21.81c-1.22.116-2.591.187-4 .19a44 44 0 0 1-4-.19V14h8z" />
+		<path d="M9.748 3.086C6.675 6.374 2.964 12.62 2.091 17.292c-.263 1.405 0 2.537 1.351 3.551c.503.378 2.267.75 4.558.967V14h8v7.81c2.29-.216 4.055-.589 4.558-.967c1.35-1.014 1.614-2.146 1.35-3.551c-.872-4.672-4.583-10.918-7.656-14.206C13.575 2.362 12.788 2 12 2s-1.575.362-2.252 1.086" />
+		<path stroke="currentColor" stroke-width="1" d="M16 21.81V14H8v7.81m-5.909-4.518C2.964 12.62 6.675 6.374 9.748 3.086C10.425 2.362 11.212 2 12 2s1.575.362 2.252 1.086c3.073 3.288 6.784 9.534 7.657 14.206c.263 1.405 0 2.537-1.351 3.551c-.771.58-4.506 1.147-8.558 1.157c-4.052-.01-7.787-.578-8.558-1.157c-1.35-1.014-1.614-2.146-1.35-3.551Z" />
+		<path stroke="currentColor" stroke-width="1" d="M9.296 10.187h.003v.004h-.003zm2.702-4.059h.004v.004h-.004zm2.702 4.06h.004v.003h-.003z" />
+	</g>
+</svg>
+      </svg>
+      <div class="input-select">
+        Gourmet<input class="combo" name="opcion" value="gourmet" type="radio" />
+      </div>
+    </div>
+    <!-- end gourmet -->
+
+    <!-- Regular -->
+    <div class="flex justify-center box-shadow-main  rounded-md ">
+      <svg xmlns="http://www.w3.org/2000/svg" width="50" height="50" viewBox="0 0 20 20" {...props} >
+	<path  fill="currentColor" d="M10.064 9.58a.5.5 0 1 0 .132-.991c-.94-.125-1.78.589-1.78 1.631a.5.5 0 0 0 1 0c0-.457.328-.683.648-.64m.344 5.385a4.495 4.495 0 1 0 0-8.99a4.495 4.495 0 0 0 0 8.99m0-1a3.495 3.495 0 1 1 0-6.99a3.495 3.495 0 0 1 0 6.99m1.218-11.89c1.045.068 2.026.379 2.727.821c1.607 1.015 2.3 2.131 2.7 2.83c.389.678 1.156 2.183 1.046 3.824a10 10 0 0 1-.174 1.316l-.04.214c-.056.324-.091.656-.032 1.378c.07.851-.102 1.783-.462 2.61c-.36.825-.925 1.587-1.678 2.057c-1.565.978-3.45 1.19-5.218.483c-.809-.323-1.082-.4-1.388-.418a7 7 0 0 0-.646.006h-.007c-.29.012-.662.026-1.179.026c-2.273 0-3.785-1.36-4.557-2.844c-1.131-2.176-1.1-5.47 1.387-7.433c.76-.6.987-.8 1.243-1.227c.421-.702.821-1.252 1.305-1.726c.485-.476 1.036-.859 1.744-1.248c1.029-.566 2.18-.738 3.229-.67m-.065.998c-.9-.06-1.854.092-2.683.548c-.654.36-1.124.692-1.525 1.085c-.401.394-.751.866-1.147 1.526c-.362.603-.728.903-1.481 1.497c-2.01 1.587-2.096 4.31-1.12 6.188c.645 1.24 1.858 2.305 3.67 2.305c.498 0 .856-.014 1.143-.025h.019c.276-.01.51-.02.733-.005c.483.03.89.165 1.696.488c1.461.584 3.012.413 4.317-.403c.538-.336.99-.915 1.291-1.609c.302-.692.438-1.458.383-2.128c-.066-.799-.03-1.216.043-1.632l.045-.241c.057-.303.118-.625.156-1.184c.09-1.327-.543-2.61-.915-3.26c-.361-.628-.954-1.59-2.367-2.481c-.54-.341-1.354-.61-2.258-.67" />
+</svg>
+      <div class="input-select">
+        Regular<input class="combo" name="opcion" value="regular" type="radio" />
+      </div>
+    </div>
+    <!-- end regular -->
+     <br/>
+    <!-- submit -->
+     <button id="btnCalcular"  class="btn" type="submit"> Calcular</button>
+     <!-- end submit -->
+  </div>
+  <!-- columna-2 -->
+   <div class="flex flex-col gap-4 items-center">
+      <textarea 
+        class=" pt-6 border-solid border-2 w-full h-20 resize-noneo output-calculator box-shadow-main  rounded-md"
+        name="price"
+        id="total-price"
+        placeholder="Precio total" disabled></textarea>
+      <textarea
+        class="p-6 border-solid border-2 w-full h-40 resize-none output-calculator box-shadow-main  rounded-md select-none"
+        name="Details"
+        id="detalles"
+        placeholder="Detalle" disabled ></textarea>
+
+
+       <div class="flex  items-center gap-2 w-full justify-center   mt-10 text-sm m-auto">
+      <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" {...props}>
+      <path fill="currentColor" d="M19.05 4.91A9.82 9.82 0 0 0 12.04 2c-5.46 0-9.91 4.45-9.91 9.91c0 1.75.46 3.45 1.32 4.95L2.05 22l5.25-1.38c1.45.79 3.08 1.21 4.74 1.21c5.46 0 9.91-4.45 9.91-9.91c0-2.65-1.03-5.14-2.9-7.01m-7.01 15.24c-1.48 0-2.93-.4-4.2-1.15l-.3-.18l-3.12.82l.83-3.04l-.2-.31a8.26 8.26 0 0 1-1.26-4.38c0-4.54 3.7-8.24 8.24-8.24c2.2 0 4.27.86 5.82 2.42a8.18 8.18 0 0 1 2.41 5.83c.02 4.54-3.68 8.23-8.22 8.23m4.52-6.16c-.25-.12-1.47-.72-1.69-.81c-.23-.08-.39-.12-.56.12c-.17.25-.64.81-.78.97c-.14.17-.29.19-.54.06c-.25-.12-1.05-.39-1.99-1.23c-.74-.66-1.23-1.47-1.38-1.72c-.14-.25-.02-.38.11-.51c.11-.11.25-.29.37-.43s.17-.25.25-.41c.08-.17.04-.31-.02-.43s-.56-1.34-.76-1.84c-.2-.48-.41-.42-.56-.43h-.48c-.17 0-.43.06-.66.31c-.22.25-.86.85-.86 2.07s.89 2.4 1.01 2.56c.12.17 1.75 2.67 4.23 3.74c.59.26 1.05.41 1.41.52c.59.19 1.13.16 1.56.1c.48-.07 1.47-.6 1.67-1.18c.21-.58.21-1.07.14-1.18s-.22-.16-.47-.28" />
+      </svg>
+      <ButtonCta id="btnWhtsaap"  title="Enviar" />
+    </div>
+
+
+
+    </div>
+
+     
+  </div>
+
+
+
+
+
+    
+  

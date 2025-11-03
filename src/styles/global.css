@@ -1,0 +1,79 @@
+@import "tailwindcss";
+
+body {
+  font-family: "Montserrat", sans-serif;
+  background-color: var(--color-background);
+}
+
+/* Color brand */
+/* Primary color */
+
+@theme {
+  --color-primary-Light: #e7f1f1;
+  --color-primary-Light-hover: #dbe9ea;
+  --color-primary-Light-active: #b4d2d4;
+  --color-primary-Normal: #0e6f74;
+  --color-primary-Normal-hover: #0d6468;
+  --color-primary-Normal-active: #0b595d;
+  --color-primary-Dark: #0b5357;
+  --color-primary-Dark-hover: #084346;
+  --color-primary-Dark-active: #063234;
+  --color-primary-Darker: #052729;
+
+  /* secondary colors */
+  --color-Secondary-Light: #fff9ed;
+  --color-Secondary-Light-hover: #fff6e4;
+  --color-Secondary-Light-active: #ffedc8;
+  --color-Secondary-Normal: #ffc44d;
+  --color-Secondary-Normal-hover: #e6b045;
+  --color-Secondary-Normal-active: #cc9d3e;
+  --color-SecondaryDark: #bf933a;
+  --color-Secondary-Dark-hover: #99762e;
+  --color-Secondary-Dark-active: #735823;
+  --color-Secondary-Darker: #59451b;
+
+  --color-background: #f3fffe;
+}
+
+
+
+.btn {
+  padding: 0.5rem 1.25rem 0.75rem 1.25rem;
+  border-radius: 10px;
+  color: white;
+  background-color: var(--color-primary-Normal);
+  font-weight: 600;
+  letter-spacing: 0.05em;
+  transition: all 200ms ease-in;
+}
+
+.btn:hover {
+  background-color: var(--color-Secondary-Normal-hover);
+  color: var(--color-primary-Dark);
+  cursor: pointer;
+}
+
+.btn:active {
+  background-color: var(--color-primary-Normal);
+  color: white;
+}
+
+.box-shadow-main {
+  box-shadow: 0 16px 32px -8px rgba(0, 0, 0, 0.7);
+}
+
+.input-select {
+  @apply border-solid  border-2 border-Secondary-Dark-hover  flex justify-around items-center  bg-primary-Dark  text-white font-semibold  rounded-md  w-48   *:cursor-pointer   ;
+}
+
+.output-calculator{
+  @apply  max-w-96 bg-primary-Dark text-2xl text-white font-medium text-center  rounded-md border-solid  border-2 border-Secondary-Dark-hover 
+}
+
+.inputError{
+  @apply border-2 border-red-500 
+}
+
+.error{
+  @apply text-sm text-red-500;
+}

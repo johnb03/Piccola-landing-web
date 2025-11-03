@@ -1,0 +1,136 @@
+---
+import "../styles/global.css";
+import Hero from "./hero.astro";
+import Testimonial from "./testimonial.astro";
+import CardProducts from "../components/cardProducts.astro";
+import Calculadora from "./calculadoraDepicaderas.astro";
+import Logofooter from "../assets/logo.svg";
+import picadera_15 from "../assets/image/picadera-15-personas.jpg";
+import picadera_35 from "../assets/image/picadera-35-personas.jpg";
+import picadera_20 from "../assets/image/Picadera-20personas.jpg";
+
+
+
+---
+
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width" />
+    <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+    <meta name="generator" content={Astro.generator} />
+    <title>Picaderas Piccola</title>
+  </head>
+
+  <body>
+    <div
+      class="min-h-screen grid grid-cols-1 gap-4 md:grid-cols-12 p-1 overflow-x-hidden"
+    >
+      <Hero />
+
+      <!-- product start -->
+      <section id="catalogo" class="md:col-start-1 md:col-span-12  mb-20">
+        <div id="catalogo-wrap" class="flex flex-col gap-6 items-center ">
+          <div
+            id="catalogo-title"
+            class="w-full h-fit flex flex-col gap-2 text-center  p-4 "
+          >
+            <h2 class="text-4xl font-bold text-primary-Darker lg:text-5xl pb-3 ">
+              Catálogo
+            </h2>
+            <p class="lg:text-3xl text-lg text-primary-Darker ">
+              Picaderas para Cumpleaños, Fiestas y Reuniones
+            </p>
+          </div>
+
+          <div
+            id="product-wrap"
+            class="w-full flex flex-wrap gap-6 items-center justify-center md:justify-between p-4"
+          >
+            <CardProducts
+              imgSrc={picadera_20 }
+              href={`https://wa.me/8497015300?text=Hola%20me%20gustaria%20pedir%20Este%20combo%20de%20850%20para%206%20personas`}
+              title={"6 personas"}
+              und={"24 Unidades"}
+              price={850}
+            />
+                <CardProducts
+                  imgSrc={picadera_20}
+                  href={`https://wa.me/8497015300?text=Hola%20me%20gustaria%20pedir%20Este%20combo%20de%201,650%20para%2012%20personas`}
+                  title=" 12 personas"
+                  und="50 Unidades"
+                  price={1650}
+                />
+                <CardProducts
+                  imgSrc={picadera_20}
+                  href={`https://wa.me/8497015300?text=Hola%20me%20gustaria%20pedir%20Este%20combo%20de%202,400%20para%2020%20personas`}
+                  title="20 personas"
+                  und="80 Unidades"
+                  price={2400}
+                />
+                <CardProducts
+                  imgSrc={picadera_20}
+                  href={`https://wa.me/8497015300?text=Hola%20me%20gustaria%20pedir%20Este%20combo%20de%202,900%20para%202520%personas`}
+                  title=" 25 personas"
+                  und="100 Unidades"
+                  price={2900}
+                />
+          </div>
+          <span
+            class="text-primary-Dark text-sm p-2 boder-solid border-2 border-primary-Darker rounded-md font-semibold text-center"
+            > Variedades a elejir <br/>*Precios no incluyen impuestos*</span
+          >
+        </div>
+      </section>
+      <!-- product end -->
+
+      <!-- calculadora start -->
+      <section id="caluladora" class="md:col-start-1 md:col-span-12 p-3 mb-20">
+        <div
+          id="calculadora-title"
+          class="w-full h-fit flex flex-col gap-2 text-center justify-between mb-6"
+        >
+          <h2 class="text-4xl font-bold text-primary-Darker lg:text-5xl p-2">
+            “Calcula el Presupuesto de tus Picaderas al Instante"
+          </h2>
+          <p class="lg:text-3xl text-lg text-primary-Darker p-2">
+            Sin Compromiso....
+          </p>
+        </div>
+        <Calculadora />
+      </section>
+      <!-- calculadura end -->
+
+      <!-- Testimonial -->
+      <section id="testimonial" class="md:col-start-1 md:col-span-12 p-3 mb-20">
+        <Testimonial />
+      </section>
+      <!-- testimonial end -->
+
+      <!-- footer -->
+      <footer class="md:col-start-1 md:col-span-12 bg-primary-Darker p-4">
+        <div
+          class="h-[50dvh] w-full p-3max-w-7xl m-auto text-white flex flex-col justify-center items-center"
+        >
+          <Logofooter class="w-xs h-auto" />
+          <div
+            class="w-full flex flex-col items-center md:justify-between md:flex-row"
+          >
+            <p class="text-xs">
+              Piccola todos los derechos reservados &copy 2020
+            </p>
+            <div id="links" class="flex gap-3">
+              <a
+                class="hover:text-Secondary-Normal-hover"
+                href="https://www.instagram.com/piccolatorta.rd/">Instagram</a
+              >
+              <a class="hover:text-Secondary-Normal-hover" href="">ticktok</a>
+            </div>
+          </div>
+        </div>
+      </footer>
+      <!-- footer end -->
+    </div>
+  </body>
+</html>
