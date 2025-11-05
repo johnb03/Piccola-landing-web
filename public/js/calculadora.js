@@ -42,21 +42,24 @@ function calcularpicaderas() {
   let detallesDelCombo;
   const numeroDePersonas = Number(cantidadDePersonas);
   if (comboSeleccionado === "primium") {
-    totalPrecio = precioDecombo * numeroDePersonas;
+    totalPrecio = `$${precioDecombo * numeroDePersonas}`;
     detallesDelCombo = picaderas.primium.Producto;
   }
 
   if (comboSeleccionado === "gourmet") {
-    totalPrecio = precioDecombo * numeroDePersonas;
+    totalPrecio = `$${precioDecombo * numeroDePersonas}`;
     detallesDelCombo = picaderas.gourmet.Producto;
   }
 
   if (comboSeleccionado === "regular") {
-    totalPrecio = precioDecombo * numeroDePersonas;
+    totalPrecio =`$${precioDecombo * numeroDePersonas}`;
     detallesDelCombo = picaderas.regular.Producto;
   }
 
-  textareaPrecio.textContent = `$${totalPrecio}`;
+  if(comboSeleccionado === null){
+    totalPrecio = "Selecciona un combo!"
+  }
+  textareaPrecio.textContent = totalPrecio;
   textareaDetalles.textContent = detallesDelCombo;
 }
 
@@ -117,9 +120,12 @@ function mensajeError(elementoInput, mensaje) {
   }
   labelError.classList.add("error");
   labelError.textContent = mensaje;
-
+ 
   elementoInput.appendChild(labelError);
 }
+
+
+
 
 //seleccion de cantidad de personas
 amountPerson.addEventListener("input", () => {
@@ -127,6 +133,7 @@ amountPerson.addEventListener("input", () => {
   if (valueNumber == !Number) {
     mensajeError(columna1wrap, "no es un numero valido");
     amountPerson.classList.add("inputError");
+    
   }
   cantidadDePersonas = valueNumber;
 });

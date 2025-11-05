@@ -1,14 +1,18 @@
-@import "tailwindcss";
+/* @import "tailwindcss"; */
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
 
 body {
   font-family: "Montserrat", sans-serif;
-  background-color: var(--color-background);
+  background-color:  var(--color-background)
 }
 
 /* Color brand */
 /* Primary color */
 
-@theme {
+:root {
+  --color-text-white:#f1f1f1;
   --color-primary-Light: #e7f1f1;
   --color-primary-Light-hover: #dbe9ea;
   --color-primary-Light-active: #b4d2d4;
@@ -32,7 +36,7 @@ body {
   --color-Secondary-Dark-active: #735823;
   --color-Secondary-Darker: #59451b;
 
-  --color-background: #f3fffe;
+  --color-background: #FFFAF0;
 }
 
 
@@ -62,18 +66,28 @@ body {
   box-shadow: 0 16px 32px -8px rgba(0, 0, 0, 0.7);
 }
 
+.error{
+  font-size: 1rem;
+  color: rgba(239,68,68, 1);
+}
+
+
+.inputError:focus{
+  border: 2 solid rgba(239,68,68, 1)  ;
+
+}
+
+
+
+@layer components{
 .input-select {
-  @apply border-solid  border-2 border-Secondary-Dark-hover  flex justify-around items-center  bg-primary-Dark  text-white font-semibold  rounded-md  w-48   *:cursor-pointer   ;
+  @apply border-solid  border flex justify-around items-center  text-white font-semibold  rounded-md  w-48   *:cursor-pointer   bg-primary-dark-active  ;
 }
 
 .output-calculator{
-  @apply  max-w-96 bg-primary-Dark text-2xl text-white font-medium text-center  rounded-md border-solid  border-2 border-Secondary-Dark-hover 
+  @apply max-w-96 text-2xl text-text-white font-medium text-center rounded-md border-solid border-2 bg-primary-dark-active;
 }
 
-.inputError{
-  @apply border-2 border-red-500 
-}
 
-.error{
-  @apply text-sm text-red-500;
+
 }
