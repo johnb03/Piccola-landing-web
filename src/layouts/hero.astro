@@ -3,10 +3,10 @@ import NavMenuBar from "../components/navMenuBar.astro";
 import ButtonCTA from "../components/Button.astro";
 import { Image } from "astro:assets";
 import HeroImage from "../assets/hero-image.jpg";
-import Image1 from "../assets/image/persona-imagen1.jpg";
-import Image2 from "../assets/image/persona-imagen2.jpg";
-import Image3 from "../assets/image/persona-imagen3.jpg";
-import Image4 from "../assets/image/persona-imagen4.jpg";
+import Image1 from "../assets/image/persona-image1.jpg";
+import Image2 from "../assets/image/persona-image2.jpg";
+import Image3 from "../assets/image/persona-image3.jpg";
+import Image4 from "../assets/image/persona-image4.jpg";
 ---
 
 <section id="hero" class="md:col-span-full h-fit">
@@ -53,22 +53,22 @@ import Image4 from "../assets/image/persona-imagen4.jpg";
         <div class="bg-primary-normal w-72 h-36 rounded-xl p-3">
           <div class="relative">
             <Image
-              class="w-12 h-12 rounded-full absolute top-0 left-0"
+              class="w-12 aspect-square  rounded-full absolute top-0 left-0"
               src={Image1}
               alt={"customer-satisfaction"}
             />
             <Image
-              class="w-12 h-12 rounded-full absolute top-0 left-8  "
+              class="w-12 aspect-square rounded-full absolute top-0 left-8  "
               src={Image2}
               alt={"customer-satisfaction"}
             />
             <Image
-              class="w-12 h-12 rounded-full absolute top-0 left-16"
+              class="w-12 aspect-square rounded-full absolute top-0 left-16"
               src={Image3}
               alt={"customer-satisfaction"}
             />
             <Image
-              class="w-12 h-12 rounded-full absolute top-0 left-24"
+              class="w-12 aspect-square rounded-full absolute top-0 left-24"
               src={Image4}
               alt={"customer-satisfaction"}
             />
